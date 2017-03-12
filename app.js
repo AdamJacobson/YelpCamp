@@ -2,12 +2,9 @@ var express                 = require("express"),
     app                     = express(),
     bodyParser              = require("body-parser"), 
     mongoose                = require("mongoose"),
-    Campground              = require("./models/campground"),
-    Comment                 = require("./models/comment"),
     seedDB                  = require("./seeds"),
     passport                = require("passport"),
     LocalStrategy           = require("passport-local"),
-    passportLocalMongoose   = require("passport-local-mongoose"),
     User                    = require("./models/user"),
     expressSession          = require("express-session"),
     methodOverried          = require("method-override"),
@@ -18,8 +15,8 @@ var commentRoutes           = require("./routes/comments"),
     campgroundRoutes        = require("./routes/campgrounds"),
     indexRoutes             = require("./routes/index");
 
-// mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://admin:vdcx803x@ds129010.mlab.com:29010/yelp-camp-adamjacobson");
+mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb://admin:vdcx803x@ds129010.mlab.com:29010/yelp-camp-adamjacobson");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");

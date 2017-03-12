@@ -8,21 +8,25 @@ var data = [
     {
         name: "Carrot Hill",
         image: "https://farm6.staticflickr.com/5181/5641024448_04fefbb64d.jpg",
-        description: lorem
+        description: lorem,
+        price: 3.50
     },
     {
         name: "Starry Lake",
         image: "https://farm7.staticflickr.com/6186/6090714876_44d269ed7e.jpg",
-        description: lorem
+        description: lorem,
+        price: 7.99
     },
     {
         name: "Yosemite",
         image: "https://farm4.staticflickr.com/3273/2602356334_20fbb23543.jpg",
-        description: lorem
+        description: lorem,
+        price: 12.00
     },
 ];
 
 function seedDB() {
+    // remove all campgrounds
     Campground.remove({}, function(error){
         if (error) {
             console.log(error);

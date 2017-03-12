@@ -25,7 +25,7 @@ app.set("view engine", "ejs");
 app.use(methodOverried("_method"));
 app.use(flash());
 
-// seedDB();
+seedDB();
 
 // PASSPORT CONFIG
 app.use(expressSession({
